@@ -1,49 +1,74 @@
-
-
-
+/**
+ * Created by Amol!
+ */
 function newQuote() {
-    var hello="Hello World";
-    var i=Math.floor(Math.random() * 10);
+  
+  /**
+   * Randomizing index
+   */
+  var index=Math.floor(Math.random() * 10);
   
 
-// retrieve the element
-    var quoteElement = document.getElementById("quoteAndAuthor");
-    quoteElement.style.visibility="hidden";
+  /**
+   * retrieve the element
+   */
+  var quoteElement = document.getElementById("quoteAndAuthor");
+  quoteElement.style.visibility="hidden";
  
-    $("#but1").click(function() {
+  /**
+   * jQuery to capture button click
+   */
+  $("#but1").click(function() {
       console.log("triggered");
       $("#quoteAndAuthor").removeClass("animated fadein");
       setTimeout(function(){
         $("#quoteAndAuthor").addClass("animated fadein");
-      },200);
-    });
-
-    setTimeout(function(){
-      quoteElement.style.visibility="visible";
     },200);
- 
-// or
+  });
 
-// reset the transition by...
-    document.getElementById('quote').innerHTML = quotes[i]['quote'];
-    document.getElementById('author').innerHTML = quotes[i]['author'];
-    var e = document.getElementById("tweet-quote");
-    e.href="https://twitter.com/intent/tweet?hashtags=quotes&amp;related=freecodecamp&amp;text="+quotes[i]['quote']+"";
-    random_bg_color();
-  
+  /**
+   * Adding delayed visibility of quote
+   */
+  setTimeout(function(){
+      quoteElement.style.visibility="visible";
+  },200);
  
+  /**
+   * Displaying quote on HTML
+   */
+  document.getElementById('quote').innerHTML = quotes[index]['quote'];
+  document.getElementById('author').innerHTML = quotes[index]['author'];
   
+  /**
+   * Redirecting to Tweeter with quote.
+   */
+  var e = document.getElementById("tweet-quote");
+  e.href="https://twitter.com/intent/tweet?hashtags=quotes&amp;related=freecodecamp&amp;text="+quotes[index]['quote']+"";
+  
+  /**
+   * Calling random background change.
+   */
+  random_bg_color();
+   
 }
+
+/**
+ * function changes background-color randomly.
+ */
 function random_bg_color() {
-    var x = Math.floor(Math.random() * 256);
-    var y = Math.floor(Math.random() * 256);
-    var z = Math.floor(Math.random() * 256);
-    var bgColor = "rgb(" + x + "," + y + "," + z + ")";
- console.log(bgColor);
+  var x = Math.floor(Math.random() * 256);
+  var y = Math.floor(Math.random() * 256);
+  var z = Math.floor(Math.random() * 256);
+  var bgColor = "rgb(" + x + "," + y + "," + z + ")";
+  console.log(bgColor);
   
-    document.body.style.background = bgColor;
-    document.getElementById('but1').style.background=bgColor;
+  document.body.style.background = bgColor;
+  document.getElementById('but1').style.background=bgColor;
 }
+
+/**
+ * JSON object containing quotes and authors
+ */
 var quotes ={
   0 : {
     quote:"Don't cry because it's over, smile because it happened.",
