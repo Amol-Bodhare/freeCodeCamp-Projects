@@ -67,7 +67,7 @@ function random_bg_color() {
 }
 
 /**
- * JSON object containing quotes and authors
+ * JSON object containing quotes and authors.
  */
 var quotes ={
   0 : {
