@@ -34,18 +34,19 @@ function foo(obj){
     var url = "https://api.twitch.tv/kraken/streams/";
         var streamName = obj['_links']['self'].split(url);
         //id("head").innerHTML=streamName[1]+" is Offline";
-        var head = document.createElement("h1");
+        var listItem = document.createElement("li");
     if(obj['stream']===null){
         
-        head.innerHTML = streamName[1]+" is Offline";
-        document.body.appendChild(head);
+        listItem.innerHTML = streamName[1]+" is Offline";
+        id("list").appendChild(listItem);
         
     }else{
-        head.innerHTML = streamName[1]+" is Online";
+        listItem.innerHTML = streamName[1]+" is Online";
         var para = document.createElement("p");
         para.innerHTML = (obj['stream']['channel']['status']);
-        document.body.appendChild(head);
-        document.body.appendChild(para);
+        id("list").appendChild(listItem);
+        //listItem.setAttribute("id","l1");
+        listItem.appendChild(para);
     }
     
 
@@ -55,6 +56,7 @@ function id(id){
 }
 setInterval(function() {
     // method to be executed;
+    
     console.log("setInterval");
   }, 5000);
 onLoad();
