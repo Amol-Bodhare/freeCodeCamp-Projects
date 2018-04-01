@@ -10,7 +10,8 @@ var streamsObject ={
     4:"storbeck",
     5:"habathcx",
     6:"RobotCaleb",
-    7:"noobs2ninjas"
+    7:"noobs2ninjas",
+    8:"capcomfighters"
 }
 function onLoad(){
     document.getElementById("head").innerHTML="heading";
@@ -30,17 +31,30 @@ function onLoad(){
 function foo(obj){
     console.log(index);
     console.log(obj['_links']['self']);
-    if(obj['stream']===null){
-        var url = "https://api.twitch.tv/kraken/streams/";
+    var url = "https://api.twitch.tv/kraken/streams/";
         var streamName = obj['_links']['self'].split(url);
         //id("head").innerHTML=streamName[1]+" is Offline";
         var head = document.createElement("h1");
+    if(obj['stream']===null){
+        
         head.innerHTML = streamName[1]+" is Offline";
         document.body.appendChild(head);
+        
+    }else{
+        head.innerHTML = streamName[1]+" is Online";
+        var para = document.createElement("p");
+        para.innerHTML = (obj['stream']['channel']['status']);
+        document.body.appendChild(head);
+        document.body.appendChild(para);
     }
+    
 
 }
 function id(id){
     return document.getElementById(id);
 }
+setInterval(function() {
+    // method to be executed;
+    console.log("setInterval");
+  }, 5000);
 onLoad();
