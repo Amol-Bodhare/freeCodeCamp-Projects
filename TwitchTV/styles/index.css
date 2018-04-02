@@ -1,0 +1,34 @@
+.left-div {
+    float: left;
+    width: 70%;
+    display: inline-block;
+    margin-right: 8px;
+    
+}
+.outer-div {
+    border: 2px solid white;
+    padding: 4%;
+    background-color: blueviolet;
+}
+.right-div {
+    
+    margin-left: 108px;
+    
+}
+.tw-image {
+    width:30px;
+    vertical-align: middle;
+}
+.nameDiv {
+    display: inline-block;
+    vertical-align: middle;
+}
+ul {
+    padding-left: 25%;
+    padding-right: 25%;
+    list-style-type: none;
+    color: white;
+}
+li:hover {
+    color: brown;
+}
