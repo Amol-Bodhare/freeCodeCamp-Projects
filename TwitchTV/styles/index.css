@@ -1,18 +1,37 @@
+ul {
+    padding-left: 25%;
+    padding-right: 25%;
+    list-style-type: none;
+    color: white;
+}
 .left-div {
     float: left;
     width: 70%;
+    word-wrap: break-word;
     display: inline-block;
     margin-right: 8px;
     
 }
+.icon-div {
+    float: left;
+    width: 30px;
+    display: inline-block;
+    margin-right: 8px;
+    
+}
+div:hover {
+    background-color: brown;
+}
 .outer-div {
     border: 2px solid white;
     padding: 4%;
+    overflow: hidden;
     background-color: blueviolet;
 }
 .right-div {
-    
+   
     margin-left: 108px;
+    font-weight:bold;
     
 }
 .tw-image {
@@ -21,14 +40,15 @@
 }
 .nameDiv {
     display: inline-block;
-    vertical-align: middle;
+    vertical-align: top;
 }
-ul {
-    padding-left: 25%;
-    padding-right: 25%;
-    list-style-type: none;
+a,a:hover {
+    text-decoration-line: none;
     color: white;
 }
-li:hover {
-    color: brown;
+span {
+    color:salmon;
+
 }
+
+

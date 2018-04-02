@@ -55,11 +55,14 @@ function foo(obj){
     if(obj['stream']===null){
        
         streamsObject[streamName[1]]['status'] = "Offline";
-        //listItem.innerHTML = streamName[1]+" is Offline";
+        id(streamName[1]).setAttribute("style","color:yellow");
        // id("list").appendChild(listItem);
         
     }else{
         streamsObject[streamName[1]]['status'] = "Online";
+        id(streamName[1]).setAttribute("style","color:#004d00");
+        console.log(obj);
+        id(streamName[1]+"-span").innerHTML = obj['stream']['channel']['status'];
         // listItem.innerHTML = streamName[1]+" is Online";
         // var para = document.createElement("p");
         // para.innerHTML = (obj['stream']['channel']['status']);
