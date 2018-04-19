@@ -33,19 +33,19 @@ function init() {
             currentOperator = "";
             firstOperand=0;
             chain="";
-            text.innerHTML="";
+            text.innerHTML="0";
             str="";
             console.log("str: "+str);
         }
         else if(val.target.id==="butEqual") {
             operator(val.target.id);
             currentOperator = "";
-            firstOperand=0;
+            //firstOperand=0;
             chain="";
-            str=""
+            str="";
             console.log("str: "+str);
         }
-        else if(!isNaN(str.charAt(str.length-1))) {
+        else if(!isNaN(str.charAt(str.length-1)) && str.length>0) {
             str=str.concat(opStr[val.target.id.substring(3)]);
             console.log("str: "+str);
             operator(val.target.id);
@@ -63,7 +63,7 @@ function init() {
             operate(firstOperand,currentOperator,chain);
             text.innerHTML=Math.round(firstOperand * 100) / 100
         }
-        firstOperand=chain;
+        firstOperand=parseFloat(chain);
         chain='';
 
        
