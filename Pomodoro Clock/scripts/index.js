@@ -12,9 +12,11 @@ function init() {
     var slider = document.getElementById("myRange");
     var output = document.getElementById("demo");
     output.innerHTML = slider.value;
+    document.getElementById("displayTime").innerHTML = slider.value;
     time1=slider.value-1;
     slider.oninput = function() {
      output.innerHTML = this.value;
+     document.getElementById("displayTime").innerHTML = slider.value;
     // time1=this.value;
     document.getElementById("top").style.animation= `none`;
     document.getElementById("line").style.animation= `none`;
@@ -81,6 +83,9 @@ function init() {
             document.getElementById("top").classList.remove("top1");
             document.getElementById("line").classList.remove("line");
             document.getElementById("bottom").classList.remove("bottom1");
+            document.getElementById("top").style.animation= `none`;
+            document.getElementById("line").style.animation= `none`;
+            document.getElementById("bottom").style.animation= `none`;
         }
     }
     
