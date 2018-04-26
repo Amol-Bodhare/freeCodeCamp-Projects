@@ -21,7 +21,7 @@ body{
     
 }
 
-.game-container {
+.container {
     background: #3445db;
     width: 50%;
     padding: 5px;
@@ -29,10 +29,7 @@ body{
     margin-top:10px;
 }
 
-.inner-container {
-    width: 100%;
-    
-}
+
 span {  
     padding: 5px;
     margin: auto;

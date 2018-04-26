@@ -168,17 +168,17 @@ $(document).ready(function() {
         gameState = gameOver(grid);
         
         if (gameState) {
-            $('.winner').html('<p>Game over: ' + (gameState === COMPUTER_TOKEN ? 'Computer is':'You are') + ' the winner</p>');
+            $('.result').html('<p>Game over: ' + (gameState === COMPUTER_TOKEN ? 'Computer is':'You are') + ' the winner</p>');
             
             setTimeout(function() {
-                $('.winner').html('');
+                $('.result').html('');
                 reset();
             }, 2000);
             return;
         } else if (gameState === null) {
-          $('.winner').html('<p>Game is drawn! Try again</p>');
+          $('.result').html('<p>Game is drawn! Try again</p>');
           setTimeout(function() {
-              $('.winner').html('');
+              $('.result').html('');
               reset();
           }, 2000);
             return;
@@ -194,9 +194,9 @@ $(document).ready(function() {
         if (gameState) {
             bool=true;
             var gs=gameOver(grid);
-            $('.winner').html('<p>Game over: ' + (gameState === COMPUTER_TOKEN ? 'Computer is':'You are') + ' the winner</p>');
+            $('.result').html('<p>Game over: ' + (gameState === COMPUTER_TOKEN ? 'Computer is':'You are') + ' the winner</p>');
             setTimeout(function() {
-                $('.winner').html('');
+                $('.result').html('');
                 reset();
             }, 2000);
         }
