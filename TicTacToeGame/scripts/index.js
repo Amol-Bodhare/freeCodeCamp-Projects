@@ -24,7 +24,7 @@ $(document).ready(function() {
     ];
 
     function gameOver(grid) {
-        // Horizantal
+        // Horizontal
         for (var i = 0; i < 3; i++) {
             if (grid[i][0] !== '' &&
                 grid[i][0] === grid[i][1] &&
