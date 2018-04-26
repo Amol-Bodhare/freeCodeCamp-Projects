@@ -1,10 +1,50 @@
-<html>
-  <head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content="HTML, CSS, JavaScript, jQuery">
+    <meta name="author" content="Zia">
+    <meta name="Tic Tac Toe Game" content="The user can play a game of Tic Tac Toe with the computer. ">
+    <title>Tic Tac Toe Game</title>
     <link rel="stylesheet" href="styles/styles.css">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-   
-  </head>
-  <body style="background-color:#708090">  
-      <script src="scripts/index.js"></script>
-  </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lodash@4.17.4/lodash.min.js"></script>
+</head>
+<body>
+    <div class="center">
+              <h1>Tic Tac Toe Game</h1>
+              <div>Choose your symbol <br>
+                <span id="x">X</span>
+                <span id="o">O</span>
+              </div>
+        <div class="game-container">
+            
+                <section class="section">
+                    <div class="cell" data-i=0 data-j=0></div>
+                    <div class="cell" data-i=0 data-j=1></div>
+                    <div class="cell" data-i=0 data-j=2></div>
+                </section>
+                <section class="section">
+                    <div class="cell" data-i=1 data-j=0></div>
+                    <div class="cell" data-i=1 data-j=1></div>
+                    <div class="cell" data-i=1 data-j=2></div>
+                </section>
+                <section class="section">
+                    <div class="cell" data-i=2 data-j=0></div>
+                    <div class="cell" data-i=2 data-j=1></div>
+                    <div class="cell" data-i=2 data-j=2></div>
+                </section>
+            
+        </div>
+        <div class="winner"></div>
+        <div class="button">
+            <button id="restart" class="btn">Restart</button>
+        </div>
+    </div>
+<!-- Bootstrap Tether -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+<script src="scripts/index.js"></script>  
+</body>
 </html>
