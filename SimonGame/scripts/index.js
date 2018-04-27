@@ -12,12 +12,12 @@ $(document).ready(function() {
             let index = Randomize();
             order.push({index: index,flag:false});
         }
-        //console.log(order);
+        console.log(order);
 
         display(order[0],index1+1);
 
     }
-    var c=0;
+    var c=0,c1=0;
     function display(num,count) {
         var y=setTimeout(function () {
         $('#but'+num.index+'').delay(1000).css('color','red');
@@ -28,31 +28,52 @@ $(document).ready(function() {
             if(c>=(count-1)){
                 console.log("clear");
                 clearTimeout(x);
+                c1=0;
+                clearOrder();
                 return;
             }
             c++;
             display(order[c],count);
         }, 2000);
     }
+    // display(order[0],index1+1);
+    var checkflag=false;
     function check(event) {
-        if(event.data === order[index1].index) {
-            order[index1].flag=order[index1].flag ? false : true ;
-            console.log(order);
-            if(checkSequence()) {
-            console.log("true");
-           index1++;
-           
-           c=0;
-           display(order[0],index1+1);
-           } else {
-                console.log("inner False");
-           }
+        
+        if(event.data === order[c1].index) {
+            console.log("right");
+            c1++;
+            
+            
         } else {
-            console.log("false");
+            console.log('wrong step---- Listen again');
+            c=0;
+            display(order[0],index1+1);
+            
+
+            
+        }
+        if(c1===index1+1){
+            index1++;c=0;
+            display(order[0],index1+1);
+        }
+    }
+    function clearOrder() {
+        for(var i=0;i<=index1;i++) {
+            order[i].flag=false;
         }
     }
     function checkSequence() {
-        return true;
+        var checksum = -1;
+        for(var i=0;i<=index1;i++){
+            if(order[i].flag == true) {
+                checksum++;
+            }
+        }
+        if(checksum === index1){
+            return true;
+        }
+        else return false;
     }
     function Randomize() {
         return Math.floor(Math.random() * (4 - 1 + 1)) + 1;
