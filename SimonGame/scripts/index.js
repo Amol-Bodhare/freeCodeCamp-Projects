@@ -12,10 +12,7 @@ $(document).ready(function() {
     $('#but3').click(3,check);
     $('#but4').click(4,check);
     $('#strictBtn').click(strict);
-    $('#but1').prop('disabled',true);
-    $('#but2').prop('disabled',true);
-    $('#but3').prop('disabled',true);
-    $('#but4').prop('disabled',true);
+    disableButtons();
     function start() {
         index1=0;
         c1=0;
@@ -23,10 +20,7 @@ $(document).ready(function() {
         clearTimeout(x);
         clearTimeout(y);
         $('#startBtn').html('Restart');
-        $('#but1').prop('disabled',false);
-        $('#but2').prop('disabled',false);
-        $('#but3').prop('disabled',false);
-        $('#but4').prop('disabled',false);
+        enableButtons();
         for(var i=0;i<20;i++) {
             let index = Randomize();
             order[i]=index;
@@ -38,10 +32,7 @@ $(document).ready(function() {
     }
     function stop() {
         $('#startBtn').html('Start');
-        $('#but1').prop('disabled',true);
-        $('#but2').prop('disabled',true);
-        $('#but3').prop('disabled',true);
-        $('#but4').prop('disabled',true);
+        disableButtons();
     }
     function strict() {
         if(strictBoolean) {
@@ -54,6 +45,7 @@ $(document).ready(function() {
         }
     }
     function display(num,count) {
+        disableButtons();
         y=setTimeout(function () {
             $('#status').html(`${index1+1}`);
         $('#but'+num+'').delay(1000).css('color','red');
@@ -65,7 +57,8 @@ $(document).ready(function() {
                 console.log("clear:"+c);
                 clearTimeout(x);
                 c1=0;
-                //clearOrder();
+                enableButtons();
+                
                 return;
             }
             c++;
@@ -108,5 +101,17 @@ $(document).ready(function() {
     
     function Randomize() {
         return Math.floor(Math.random() * (4 - 1 + 1)) + 1;
+    }
+    function disableButtons() {
+        $('#but1').prop('disabled',true);
+        $('#but2').prop('disabled',true);
+        $('#but3').prop('disabled',true);
+        $('#but4').prop('disabled',true);
+    }
+    function enableButtons() {
+        $('#but1').prop('disabled',false);
+        $('#but2').prop('disabled',false);
+        $('#but3').prop('disabled',false);
+        $('#but4').prop('disabled',false);
     }
 });
