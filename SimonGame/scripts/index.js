@@ -5,7 +5,7 @@ $(document).ready(function() {
     let strictBoolean=false;
     let x=null;
     let y=null;
-    
+    const complementColors = ['#f9dd62','#33ff8f','#ed3b44','#85e0ff'];
     $('#startBtn').click(start);
     $('#but1').click(1,check);
     $('#but2').click(2,check);
@@ -46,13 +46,15 @@ $(document).ready(function() {
     }
     function display(num,count) {
         disableButtons();
+        var tempColor=null;
         y=setTimeout(function () {
             $('#status').html(`${index1+1}`);
-        $('#but'+num+'').delay(1000).css('color','red');
+            tempColor = $('#but'+num+'').css('background-color');
+            $('#but'+num+'').delay(1000).css('background-color',complementColors[num-1]);
         },1000);
         x=setTimeout(function () {
             
-            $('#but'+num+'').css('color','black');
+            $('#but'+num+'').css('background-color',tempColor);
             if(c>=(count-1)){
                 console.log("clear:"+c);
                 clearTimeout(x);
@@ -67,6 +69,14 @@ $(document).ready(function() {
     }
     
     function check(event) {
+        var temp=null;
+        temp = $('#but'+event.data+'').css('background-color');
+        console.log(temp);
+        $('#but'+event.data+'').css('background-color',complementColors[event.data-1]);
+        var t = setTimeout(function() {
+            $('#but'+event.data+'').css('background-color',temp);
+        },200);
+        
         let sound1 = document.getElementById("Audio"+event.data+""); 
         sound1.play();        
         if(event.data === order[c1]) {
@@ -103,15 +113,16 @@ $(document).ready(function() {
         return Math.floor(Math.random() * (4 - 1 + 1)) + 1;
     }
     function disableButtons() {
-        $('#but1').prop('disabled',true);
-        $('#but2').prop('disabled',true);
-        $('#but3').prop('disabled',true);
-        $('#but4').prop('disabled',true);
+        $('#but1').css({pointerEvents: "none"})
+        $('#but2').css({pointerEvents: "none"})
+        $('#but3').css({pointerEvents: "none"})
+        $('#but4').css({pointerEvents: "none"})
     }
     function enableButtons() {
-        $('#but1').prop('disabled',false);
-        $('#but2').prop('disabled',false);
-        $('#but3').prop('disabled',false);
-        $('#but4').prop('disabled',false);
+        $('#but1').css({pointerEvents: "auto"})
+        $('#but2').css({pointerEvents: "auto"})
+        $('#but3').css({pointerEvents: "auto"})
+        $('#but4').css({pointerEvents: "auto"})
     }
+    
 });
