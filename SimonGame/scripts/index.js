@@ -19,7 +19,8 @@ $(document).ready(function() {
         c=0;
         clearTimeout(x);
         clearTimeout(y);
-        $('#startBtn').html('Restart');
+        $("#startBtn").effect( "shake", {times:1,direction:"up",distance:1}, 500 );
+        //$('#startBtn').html('Restart');
         enableButtons();
         for(var i=0;i<20;i++) {
             let index = Randomize();
@@ -38,8 +39,10 @@ $(document).ready(function() {
         if(strictBoolean) {
             strictBoolean = false;
             $('#strictBtn').css('background-color','');
+            $('#strict-status').css('color','');
         } else {
             strictBoolean = true;
+            $('#strict-status').css('color','red');
             $('#strictBtn').css('background-color','red');
             
         }

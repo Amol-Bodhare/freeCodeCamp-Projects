@@ -6,7 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script type = "text/javascript"
+         src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+      </script>
+		
+      <script type = "text/javascript" 
+         src = "https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js">
+      </script>
     <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Document</title>
 </head>
 <body>
@@ -27,24 +35,35 @@
             <div id="flex-container">
                 <div id="but1" class="flex-left-item"></div>
                 <div class="flex-center-item"> 
-                    <div id="centerConsole">
-                        <button id="startBtn">Start</button>
-                        <button id="strictBtn">Strict</button>
-                        <div>
-                                <p id="status"></p>
-                        </div>
+                    <div>
+                        <p class="main-label">Simon</p>
                     </div>
+                    <div id="centerConsole" class="wrapper">
+                        <div class="left">
+                            <button id="startBtn"><i class="fa fa-power-off"></i></button>
+                            <p class="label">Start</p>
+                        </div>
+                        <div class="right">
+                            <button id="strictBtn"></button>
+                            <p class="label">Strict</p>
+                        </div>
+                        
+                    </div>  
+                    <div id="statusView">
+                        <p id="strict-status">Strict</p>
+                        <p id="status"></p>
+                    </div>
+                        
+                     
+                        
+                        
+                    
                 </div>
                 <div id="but3" class="flex-right-item"></div>
             </div>
             <div id="but4" class="bottomCircle" id="bottom"></div>   
         </div>
-    <div class="center">
-            
-        
     
-        
-    </div>
     <script type="text/javascript" src="scripts/index.js"></script>
 </body>
 </html>
