@@ -49,8 +49,12 @@ $(document).ready(function() {
     }
     function display(num,count) {
         disableButtons();
+        
         var tempColor=null;
         y=setTimeout(function () {
+            let sound = document.getElementById("Audio"+num+""); 
+            sound.load();
+            sound.play(); 
             $('#status').html(`${index1+1}`);
             tempColor = $('#but'+num+'').css('background-color');
             $('#but'+num+'').delay(1000).css('background-color',complementColors[num-1]);
@@ -80,8 +84,9 @@ $(document).ready(function() {
             $('#but'+event.data+'').css('background-color',temp);
         },200);
         
-        let sound1 = document.getElementById("Audio"+event.data+""); 
-        sound1.play();        
+        let sound = document.getElementById("Audio"+event.data+""); 
+        sound.load();
+        sound.play();        
         if(event.data === order[c1]) {
             console.log("right");
             c1++;
